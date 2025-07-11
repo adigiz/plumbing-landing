@@ -37,8 +37,8 @@ const Header = () => {
             <div className="flex items-center space-x-2">
               <Phone className="h-5 w-5 text-blue-600" />
               <div>
-                <div className="font-semibold">03 9888 2887</div>
-                <div className="text-sm text-blue-500">0412 839 127</div>
+                <div className="font-semibold text-black">03 9888 2887</div>
+                <div className="text-sm text-blue-600">0412 839 127</div>
               </div>
             </div>
             <div className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-bold text-white transition">
@@ -124,10 +124,10 @@ const Header = () => {
 
         <div className="mt-auto pt-6 border-t">
           <div className="text-sm text-gray-600 mb-1">Call Us</div>
-          <div className="font-semibold text-lg text-blue-700">
+          <div className="font-semibold text-lg text-black">
             03 9888 2887
           </div>
-          <div className="text-sm text-gray-500">0412 839 127</div>
+          <div className="text-sm text-blue-600">0412 839 127</div>
 
           <button className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-bold transition">
             Get a Quote

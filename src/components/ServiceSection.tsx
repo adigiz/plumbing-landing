@@ -5,7 +5,6 @@ import {
   Flame,
   Droplet,
   Cpu,
-  Hammer,
 } from "lucide-react";
 
 export default function ServicesSection() {
@@ -16,16 +15,15 @@ export default function ServicesSection() {
     { icon: Flame, label: "GAS HEATING" },
     { icon: Droplet, label: "WATER LEAK DETECTION" },
     { icon: Cpu, label: "APPLIANCE INSTALLATION" },
-    { icon: Hammer, label: "RENOVATIONS" },
   ];
 
   return (
-    <section className="py-20 bg-gray-100 pt-50">
+    <section className="py-20 bg-white pt-50">
       <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row items-start gap-12">
         {/* Left text */}
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold text-blue-900 mb-4">
-            Here&apos;s how our <br /> plumbers can help
+            Here&apos;s How Our <br /> Plumbers Can Help
             <div className="w-16 h-1 bg-blue-600 mt-2" />
           </h2>
           <p className="text-blue-800 text-lg leading-relaxed">

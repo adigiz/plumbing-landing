@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const WhyUsSection = () => {
   return (
-    <section className="relative py-20 bg-gray-100 overflow-hidden">
+    <section className="relative py-20 bg-white overflow-hidden">
       {/* Absolute background image behind the left column */}
       <div className="absolute left-0 top-0 bottom-0 w-full hidden md:block z-0">
         <Image
