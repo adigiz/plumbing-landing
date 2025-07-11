@@ -33,7 +33,7 @@ export default function Header({
   } = settings;
 
   const logoUrl = logo?.url
-    ? `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${logo.url}`
+    ? `${logo.url}`
     : "/logo.svg";
 
   return (

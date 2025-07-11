@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["localhost", "your-live-strapi-domain.com"],
+    remotePatterns: [new URL('https://beneficial-rainbow-49484dea8b.strapiapp.com/**')],
   },
 };
 

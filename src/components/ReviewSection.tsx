@@ -39,9 +39,9 @@ export default function ReviewSection({
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {reviews.map((review) => (
+          {reviews.map((review, index) => (
             <div
-              key={review.id}
+              key={index}
               className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between h-full"
             >
               <div>

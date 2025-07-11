@@ -28,9 +28,8 @@ export default function Footer({
   } = settings;
 
   const logoUrl = logo?.url
-    ? `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${logo.url}`
+    ? `${logo.url}`
     : "/logo-light.svg";
-
   return (
     <footer
       style={{

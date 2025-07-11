@@ -1,9 +1,6 @@
 export async function getSiteSettings() {
   const res = await fetch(
-    `http://localhost:1337/api/site-setting?populate=logo`,
-    {
-      next: { revalidate: 60 }, // optional for caching
-    }
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/site-setting?populate=logo`
   );
 
   if (!res.ok) {
@@ -21,7 +18,6 @@ export async function getSiteSettings() {
   return json.data;
 }
 
-// utils/fetchReviews.ts
 export async function fetchReviews() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/customer-reviews?populate=image`);
   return res.json();
