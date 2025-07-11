@@ -1,9 +1,20 @@
 import { Users, Star, Lock, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 const WhyUsSection = () => {
   return (
-    <section className="py-20 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
+    <section className="relative py-20 bg-gray-100 overflow-hidden">
+      {/* Absolute background image behind the left column */}
+      <div className="absolute left-0 top-0 bottom-0 w-full hidden md:block z-0">
+        <Image
+          src="/melbourne.jpg"
+          alt="Melbourne Background"
+          fill
+          className="object-cover opacity-10"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start relative z-10">
         {/* Left: Text + Button */}
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-blue-900 leading-tight">
@@ -28,7 +39,7 @@ const WhyUsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto px-4 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         <div className="border p-6 rounded-lg shadow-lg text-center bg-white">
           <Users className="mx-auto text-blue-900 w-8 h-8 mb-4" />
           <h4 className="font-bold text-blue-900 text-sm">

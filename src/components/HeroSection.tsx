@@ -5,7 +5,6 @@ const HeroSection = () => {
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col gap-12 items-center">
-          {/* Top Text Block */}
           <div className="flex flex-col md:flex-row w-full">
             <h1 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight md:w-1/2">
               Professional Plumbing Services at Your{" "}

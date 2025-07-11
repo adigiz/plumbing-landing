@@ -27,7 +27,7 @@ const LocationSection: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Alamat</p>
+                  <p className="text-white font-semibold">Address</p>
                   <p className="text-gray-200">Jl. Ahmad yani, Pemuda 4 no 2</p>
                 </div>
               </div>
@@ -44,8 +44,8 @@ const LocationSection: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Telepon</p>
-                  <p className="text-gray-200">+62 85159959096</p>
+                  <p className="text-white font-semibold">Phone Number</p>
+                  <p className="text-gray-200">+61 85159959096</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ const LocationSection: React.FC = () => {
                 <div>
                   <p className="text-white font-semibold">Email</p>
                   <p className="text-gray-200">
-                    tjetak.digitalprinting@gmail.com
+                    plumbing@gmail.com
                   </p>
                 </div>
               </div>
