@@ -1,7 +1,7 @@
 const HeroSection2 = () => {
   return (
-    <section className="pt-32 min-h-[calc(100vh-8rem)] pb-12 overflow-hidden flex items-center">
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <section className="relative overflow-hidden flex items-center py-24 min-h-[900px]">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <video
           className="w-full h-full object-cover"
           src="/background-video.mp4"
@@ -12,8 +12,10 @@ const HeroSection2 = () => {
         />
       </div>
 
+      {/* Overlay */}
       <div className="absolute inset-0 bg-opacity-30 z-10" />
 
+      {/* Content */}
       <div className="container mx-auto px-4 max-w-7xl relative z-20">
         <div className="flex flex-col gap-12 items-center">
           <div className="flex flex-col md:flex-row w-full">

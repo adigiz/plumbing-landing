@@ -6,6 +6,7 @@ import BookQuoteSection from "@/components/BookQuoteSection";
 import ReviewSection from "@/components/ReviewSection";
 import Footer from "@/components/Footer";
 import HeroSection2 from "@/components/HeroSection2";
+import EmergencyPlumberSection from "@/components/EmergencyPlumberSection";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <WhyUsSection />
       <BookQuoteSection />
       <ReviewSection />
+      <EmergencyPlumberSection/>
       <Footer />
     </div>
   );
