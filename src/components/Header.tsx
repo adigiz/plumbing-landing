@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <>
       {/* Header Bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+      <header className="relative top-0 left-0 right-0 z-50 bg-white shadow-md">
         <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center py-4">
           {/* Logo */}
           <div className="w-36 h-12 flex items-center">
