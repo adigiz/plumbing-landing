@@ -1,10 +1,21 @@
 import { Users, Star, Lock, CheckCircle } from "lucide-react";
 import Image from "next/image";
 
-const WhyUsSection = () => {
+export default function WhyUsSection({
+  settings,
+}: {
+  settings: {
+    themeColorPrimary: string;
+    themeTextColorOnPrimary: string;
+    primaryTextColor: string;
+  };
+}) {
+  const { themeColorPrimary, themeTextColorOnPrimary, primaryTextColor } =
+    settings;
+
   return (
     <section className="relative py-20 bg-white overflow-hidden">
-      {/* Absolute background image behind the left column */}
+      {/* Background Image */}
       <div className="absolute left-0 top-0 bottom-0 w-full hidden md:block z-0">
         <Image
           src="/melbourne.jpg"
@@ -15,18 +26,30 @@ const WhyUsSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start relative z-10">
-        {/* Left: Text + Button */}
+        {/* Left Content */}
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-blue-900 leading-tight">
+          <h2
+            className="text-3xl font-bold leading-tight"
+            style={{ color: primaryTextColor }}
+          >
             Why choose <br /> Us as your <br /> Melbourne Plumber?
           </h2>
-          <div className="w-16 h-1 bg-blue-800 mb-4" />
-          <button className="bg-blue-600 text-white font-bold px-6 py-3 rounded-sm hover:bg-blue-700 transition">
+          <div
+            className="w-16 h-1 mb-4"
+            style={{ backgroundColor: themeColorPrimary }}
+          />
+          <button
+            className="font-bold px-6 py-3 rounded-sm transition"
+            style={{
+              backgroundColor: themeColorPrimary,
+              color: themeTextColorOnPrimary,
+            }}
+          >
             REQUEST A QUOTE NOW
           </button>
         </div>
 
-        {/* Right: Embedded YouTube */}
+        {/* Right YouTube Embed */}
         <div className="aspect-video w-full rounded overflow-hidden">
           <iframe
             className="w-full h-full"
@@ -39,62 +62,65 @@ const WhyUsSection = () => {
         </div>
       </div>
 
+      {/* Feature Grid */}
       <div className="max-w-7xl mx-auto px-4 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-        <div className="border p-6 rounded-lg shadow-lg text-center bg-white">
-          <Users className="mx-auto text-blue-900 w-8 h-8 mb-4" />
-          <h4 className="font-bold text-blue-900 text-sm">
-            FAMILY OWNED & OPERATED
-          </h4>
-          <p className="text-blue-600 font-semibold mt-2 mb-1 text-sm">
-            For over 40 years
-          </p>
-          <p className="text-sm text-gray-700">
-            Since 1978, we’ve handled plumbing system installation, repair &
-            maintenance.
-          </p>
-        </div>
-
-        <div className="border p-6 rounded-lg shadow-lg text-center bg-white">
-          <Star className="mx-auto text-blue-900 w-8 h-8 mb-4" />
-          <h4 className="font-bold text-blue-900 text-sm">
-            100% SATISFACTION GUARANTEE
-          </h4>
-          <p className="text-blue-600 font-semibold mt-2 mb-1 text-sm">
-            We’re only happy if you are
-          </p>
-          <p className="text-sm text-gray-700">
-            We&apos;ve built a reliable reputation through diligent service and care.
-          </p>
-        </div>
-
-        <div className="border p-6 rounded-lg shadow-lg text-center bg-white">
-          <Lock className="mx-auto text-blue-900 w-8 h-8 mb-4" />
-          <h4 className="font-bold text-blue-900 text-sm">
-            HONEST, FIXED UPFRONT PRICING
-          </h4>
-          <p className="text-blue-600 font-semibold mt-2 mb-1 text-sm">
-            For peace of mind
-          </p>
-          <p className="text-sm text-gray-700">
-            We listen to your concerns & provide clear, upfront pricing.
-          </p>
-        </div>
-
-        <div className="border p-6 rounded-lg shadow-lg text-center bg-white">
-          <CheckCircle className="mx-auto text-blue-900 w-8 h-8 mb-4" />
-          <h4 className="font-bold text-blue-900 text-sm">
-            WE WORK ON WEEKENDS
-          </h4>
-          <p className="text-blue-600 font-semibold mt-2 mb-1 text-sm">
-            No waiting for Monday
-          </p>
-          <p className="text-sm text-gray-700">
-            On-call plumbers every weekend. No call-out fee for weekend jobs.
-          </p>
-        </div>
+        {[
+          {
+            icon: Users,
+            title: "FAMILY OWNED & OPERATED",
+            subtitle: "For over 40 years",
+            description:
+              "Since 1978, we’ve handled plumbing system installation, repair & maintenance.",
+          },
+          {
+            icon: Star,
+            title: "100% SATISFACTION GUARANTEE",
+            subtitle: "We’re only happy if you are",
+            description:
+              "We've built a reliable reputation through diligent service and care.",
+          },
+          {
+            icon: Lock,
+            title: "HONEST, FIXED UPFRONT PRICING",
+            subtitle: "For peace of mind",
+            description:
+              "We listen to your concerns & provide clear, upfront pricing.",
+          },
+          {
+            icon: CheckCircle,
+            title: "WE WORK ON WEEKENDS",
+            subtitle: "No waiting for Monday",
+            description:
+              "On-call plumbers every weekend. No call-out fee for weekend jobs.",
+          },
+        ].map(({ icon: Icon, title, subtitle, description }, i) => (
+          <div
+            key={i}
+            className="border p-6 rounded-lg shadow-lg text-center bg-white"
+          >
+            <Icon
+              className="mx-auto mb-4"
+              style={{ color: themeColorPrimary }}
+              size={32}
+            />
+            <h4
+              className="font-bold text-sm"
+              style={{ color: primaryTextColor }}
+            >
+              {title}
+            </h4>
+            <p
+              className="font-semibold mt-2 mb-1 text-sm"
+              style={{ color: themeColorPrimary }}
+            >
+              {subtitle}
+            </p>
+            <p className="text-sm" style={{ color: primaryTextColor }}>
+              {description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default WhyUsSection;
+}

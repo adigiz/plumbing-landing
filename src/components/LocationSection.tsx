@@ -1,21 +1,48 @@
 import React from "react";
 
-const LocationSection: React.FC = () => {
+export default function LocationSection({
+  settings,
+}: {
+  settings: {
+    address: string;
+    primaryPhone: string;
+    email: string;
+    themeColorPrimary: string;
+    themeTextColorOnPrimary: string;
+    primaryTextColor: string;
+    mapUrl: string;
+  };
+}) {
+  const {
+    address,
+    primaryPhone,
+    email,
+    themeColorPrimary,
+    themeTextColorOnPrimary,
+    primaryTextColor,
+    mapUrl,
+  } = settings;
+
   return (
     <section id="about" className="bg-gray-100">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
-          <div className="bg-blue-600 shadow-lg p-8 py-20">
-            <h3 className="text-2xl font-bold text-white mb-6">
+          <div
+            className="shadow-lg p-8 py-20"
+            style={{ backgroundColor: themeColorPrimary }}
+          >
+            <h3
+              className="text-2xl font-bold mb-6"
+              style={{ color: themeTextColorOnPrimary }}
+            >
               Service location
             </h3>
             <div className="space-y-4">
-              {/* Address */}
               <div className="flex items-center">
                 <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-4">
                   <svg
-                    className="w-3 h-3 text-blue-600"
+                    className="w-3 h-3"
+                    style={{ color: themeColorPrimary }}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -27,16 +54,21 @@ const LocationSection: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Address</p>
-                  <p className="text-gray-200">Jl. Ahmad yani, Pemuda 4 no 2</p>
+                  <p
+                    className="font-semibold"
+                    style={{ color: themeTextColorOnPrimary }}
+                  >
+                    Address
+                  </p>
+                  <p style={{ color: themeTextColorOnPrimary }}>{address}</p>
                 </div>
               </div>
 
-              {/* Phone */}
               <div className="flex items-center">
                 <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-4">
                   <svg
-                    className="w-3 h-3 text-blue-600"
+                    className="w-3 h-3"
+                    style={{ color: themeColorPrimary }}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -44,16 +76,23 @@ const LocationSection: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Phone Number</p>
-                  <p className="text-gray-200">+61 85159959096</p>
+                  <p
+                    className="font-semibold"
+                    style={{ color: themeTextColorOnPrimary }}
+                  >
+                    Phone Number
+                  </p>
+                  <p style={{ color: themeTextColorOnPrimary }}>
+                    {primaryPhone}
+                  </p>
                 </div>
               </div>
 
-              {/* Email */}
               <div className="flex items-center">
                 <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-4">
                   <svg
-                    className="w-3 h-3 text-blue-600"
+                    className="w-3 h-3"
+                    style={{ color: themeColorPrimary }}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -62,18 +101,21 @@ const LocationSection: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Email</p>
-                  <p className="text-gray-200">
-                    plumbing@gmail.com
+                  <p
+                    className="font-semibold"
+                    style={{ color: themeTextColorOnPrimary }}
+                  >
+                    Email
                   </p>
+                  <p style={{ color: themeTextColorOnPrimary }}>{email}</p>
                 </div>
               </div>
 
-              {/* Search Field */}
               <div className="pt-4">
                 <label
                   htmlFor="location-search"
-                  className="text-white font-semibold block mb-2"
+                  className="block mb-2 font-semibold"
+                  style={{ color: themeTextColorOnPrimary }}
                 >
                   Search other location
                 </label>
@@ -81,24 +123,24 @@ const LocationSection: React.FC = () => {
                   type="text"
                   id="location-search"
                   placeholder="Enter location name"
-                  className="w-full px-4 py-3 rounded-md text-md text-blue-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  className="w-full px-4 py-3 rounded-md text-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  style={{ color: primaryTextColor }}
                 />
               </div>
             </div>
           </div>
 
-          {/* Map */}
           <div className="h-full py-10 bg-gray-100 overflow-hidden">
             <div className="w-full h-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.6839196931473!2d117.16805699999999!3d-0.4702869999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMjgnMTMuMCJTIDExN8KwMTAnMDUuMCJF!5e0!3m2!1sen!2sid!4v1751851952177!5m2!1sen!2sid"
+                src={mapUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Lokasi Toko"
+                title="Service Area Map"
               />
             </div>
           </div>
@@ -106,6 +148,4 @@ const LocationSection: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default LocationSection;
+}

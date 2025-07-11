@@ -4,7 +4,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const BookQuoteSection = () => {
+export default function BookQuoteSection({
+  settings,
+}: {
+  settings: {
+    themeColorPrimary: string;
+    themeTextColorOnPrimary: string;
+    primaryTextColor: string;
+  };
+}) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -25,11 +33,15 @@ const BookQuoteSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted", form);
-
+    // Add integration here
   };
+
+  const { themeColorPrimary, themeTextColorOnPrimary, primaryTextColor } =
+    settings;
 
   return (
     <section className="bg-white">
+      {/* Banner */}
       <div className="w-full h-[300px] relative">
         <Image
           src="/plumbers.jpg"
@@ -40,15 +52,25 @@ const BookQuoteSection = () => {
         />
       </div>
 
-      <div className="bg-blue-600 py-4 text-center">
-        <h2 className="text-xl sm:text-2xl font-bold text-white">
-            Get Guote Now
+      {/* Colored Banner Title */}
+      <div
+        className="py-4 text-center"
+        style={{ backgroundColor: themeColorPrimary }}
+      >
+        <h2
+          className="text-xl sm:text-2xl font-bold"
+          style={{ color: themeTextColorOnPrimary }}
+        >
+          Get Quote Now
         </h2>
       </div>
 
-      {/* Form */}
+      {/* Form Section */}
       <div className="max-w-4xl mx-auto px-4 py-10">
-        <h3 className="text-2xl font-bold text-center text-blue-900 mb-8">
+        <h3
+          className="text-2xl font-bold text-center mb-8"
+          style={{ color: primaryTextColor }}
+        >
           RELIABLE. TRUSTED.
         </h3>
 
@@ -56,56 +78,39 @@ const BookQuoteSection = () => {
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
-          <input
-            type="text"
-            name="name"
-            placeholder="Name*"
-            value={form.name}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border-2 rounded-lg bg-white text-black focus:ring-2 focus:ring-blue-600 focus:border-transparent border-gray-300"
-            required
-          />
+          {["name", "phone", "email", "suburb"].map((field) => (
+            <input
+              key={field}
+              type={field === "email" ? "email" : "text"}
+              name={field}
+              placeholder={
+                field.charAt(0).toUpperCase() +
+                field.slice(1).replace("email", "Email") +
+                "*"
+              }
+              value={form[field as keyof typeof form]}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border-2 rounded-lg bg-white text-black focus:ring-2 focus:border-transparent border-gray-300 focus:ring-[color:var(--primary-color)]"
+              required
+            />
+          ))}
 
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone/Mobile*"
-            value={form.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border-2 rounded-lg bg-white text-black focus:ring-2 focus:ring-blue-600 focus:border-transparent border-gray-300"
-            required
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email*"
-            value={form.email}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border-2 rounded-lg bg-white text-black focus:ring-2 focus:ring-blue-600 focus:border-transparent border-gray-300"
-            required
-          />
-
-          <input
-            type="text"
-            name="suburb"
-            placeholder="Suburb*"
-            value={form.suburb}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border-2 rounded-lg bg-white text-black focus:ring-2 focus:ring-blue-600 focus:border-transparent border-gray-300"
-            required
-          />
-
+          {/* Select Field */}
           <div className="relative col-span-1 md:col-span-2">
             <select
               name="service"
               value={form.service}
               onChange={handleChange}
-              className={`w-full appearance-none px-4 py-3 pr-10 border-2 rounded-lg bg-white focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black ${
+              className="w-full appearance-none px-4 py-3 pr-10 border-2 rounded-lg bg-white focus:ring-2 focus:border-transparent text-black"
+              style={
                 form.service
-                  ? "text-blue-700 border-blue-700 font-semibold"
-                  : "border-gray-300"
-              }`}
+                  ? {
+                      borderColor: themeColorPrimary,
+                      color: primaryTextColor,
+                      fontWeight: "600",
+                    }
+                  : {}
+              }
               required
             >
               <option value="">Choose a domestic plumbing service...</option>
@@ -114,29 +119,35 @@ const BookQuoteSection = () => {
               <option value="Hot Water System">Hot Water System</option>
               <option value="Toilet Repair">Toilet Repair</option>
             </select>
+
             <ChevronDown
-              className={`absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none transition-colors duration-200 ${
-                form.service ? "text-blue-700" : "text-gray-400"
-              }`}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none transition-colors duration-200"
               size={20}
+              style={{
+                color: form.service ? primaryTextColor : "#9ca3af", // fallback: gray-400
+              }}
             />
           </div>
 
-          {/* Textarea */}
+          {/* Message Field */}
           <textarea
             name="message"
             placeholder="Let us know how we can help?"
             value={form.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 border-2 rounded-lg bg-white text-black focus:ring-2 focus:ring-blue-600 focus:border-transparent col-span-1 md:col-span-2 border-gray-300"
+            className="w-full px-4 py-3 border-2 rounded-lg bg-white text-black focus:ring-2 focus:ring-[color:var(--primary-color)] focus:border-transparent col-span-1 md:col-span-2 border-gray-300"
             rows={4}
           />
 
-          {/* Submit Button */}
+          {/* Submit */}
           <div className="col-span-1 md:col-span-2 flex justify-center">
             <button
               type="submit"
-              className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded transition"
+              className="font-bold px-6 py-3 rounded transition"
+              style={{
+                backgroundColor: themeColorPrimary,
+                color: themeTextColorOnPrimary,
+              }}
             >
               SEND ENQUIRY
             </button>
@@ -145,6 +156,4 @@ const BookQuoteSection = () => {
       </div>
     </section>
   );
-};
-
-export default BookQuoteSection;
+}
