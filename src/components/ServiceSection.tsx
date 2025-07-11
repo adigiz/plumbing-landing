@@ -18,7 +18,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white pt-50">
+    <section className="py-20 bg-white pt-30">
       <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row items-start gap-12">
         {/* Left text */}
         <div className="md:w-1/2">

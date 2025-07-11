@@ -66,13 +66,41 @@ const ReviewSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-lg font-semibold text-blue-900">
-            4.9 out of 5 stars from 573+ genuine reviews
-          </p>
-          <p className="text-gray-600 mt-2">
-            See more reviews on Google, Facebook, and ProductReview.com.au
-          </p>
+        <div className="flex justify-center mt-12">
+          <div className="inline-flex bg-white rounded-lg shadow-md px-6 py-4 border border-gray-200 items-center space-x-4">
+            <div className="flex-shrink-0">
+              <Image
+                src="/search.png"
+                alt="Google Logo"
+                width={40} 
+                height={40}
+                className="object-contain"
+              />
+            </div>
+
+            <div>
+              <div className="flex items-center justify-start mb-1">
+                <p className="font-semibold text-gray-800 text-lg">
+                  Google Rating
+                </p>
+              </div>
+
+              <div className="flex items-center mb-1">
+                <span className="text-orange-500 font-bold text-xl mr-2">
+                  4.8
+                </span>
+                <div className="flex text-yellow-400">
+                  {Array(5)
+                    .fill(0)
+                    .map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-current" />
+                    ))}
+                </div>
+              </div>
+
+              <p className="text-gray-600 text-sm">Based on 581 reviews</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

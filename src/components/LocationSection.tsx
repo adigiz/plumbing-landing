@@ -88,7 +88,7 @@ const LocationSection: React.FC = () => {
           </div>
 
           {/* Map */}
-          <div className="h-full py-10 bg-white overflow-hidden">
+          <div className="h-full py-10 bg-gray-100 overflow-hidden">
             <div className="w-full h-full">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.6839196931473!2d117.16805699999999!3d-0.4702869999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMjgnMTMuMCJTIDExN8KwMTAnMDUuMCJF!5e0!3m2!1sen!2sid!4v1751851952177!5m2!1sen!2sid"
