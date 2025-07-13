@@ -1,5 +1,5 @@
 import { getSiteSettings } from "@/lib/strapi";
-import HeroSection2 from "@/components/HeroSection2";
+// import HeroSection2 from "@/components/HeroSection2";
 import ServicesSection from "@/components/ServiceSection";
 import LocationSection from "@/components/LocationSection";
 import WhyUsSection from "@/components/WhyUsSection";
