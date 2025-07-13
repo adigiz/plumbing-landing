@@ -1,5 +1,5 @@
 import { getSiteSettings } from "@/lib/strapi";
-// import HeroSection2 from "@/components/HeroSection2";
+import HeroSection2 from "@/components/HeroSection2";
 import ServicesSection from "@/components/ServiceSection";
 import LocationSection from "@/components/LocationSection";
 import WhyUsSection from "@/components/WhyUsSection";
@@ -8,7 +8,6 @@ import ReviewSection from "@/components/ReviewSection";
 import EmergencyPlumberSection from "@/components/EmergencyPlumberSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
 
 export default async function HomePage() {
   const settings = await getSiteSettings();
@@ -39,8 +38,7 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Header settings={settings} />
-      <HeroSection/>
-      {/* <HeroSection2 settings={settings} /> */}
+      <HeroSection2 settings={settings} />
       <ServicesSection settings={settings} />
       <LocationSection settings={settings} />
       <WhyUsSection settings={settings} />
