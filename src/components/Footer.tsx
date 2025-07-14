@@ -4,7 +4,7 @@ export default function Footer({
   settings,
 }: {
   settings: {
-    logo: { url: string };
+    lightLogo: { url: string };
     primaryPhone: string;
     email: string;
     addressLine1: string;
@@ -16,7 +16,7 @@ export default function Footer({
   };
 }) {
   const {
-    logo,
+    lightLogo,
     primaryPhone,
     email,
     addressLine1,
@@ -27,8 +27,8 @@ export default function Footer({
     brandName
   } = settings;
 
-  const logoUrl = logo?.url
-    ? `${logo.url}`
+  const logoUrl = lightLogo?.url
+    ? `${lightLogo.url}`
     : "/logo-light.svg";
   return (
     <footer
