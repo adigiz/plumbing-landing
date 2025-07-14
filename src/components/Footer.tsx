@@ -6,25 +6,25 @@ export default function Footer({
   settings: {
     logo: { url: string };
     primaryPhone: string;
-    secondaryPhone: string;
     email: string;
     addressLine1: string;
     addressLine2: string;
     footerDescription: string;
     themeColorPrimary: string;
     themeTextColorOnPrimary: string;
+    brandName: string
   };
 }) {
   const {
     logo,
     primaryPhone,
-    secondaryPhone,
     email,
     addressLine1,
     addressLine2,
     footerDescription,
     themeColorPrimary,
     themeTextColorOnPrimary,
+    brandName
   } = settings;
 
   const logoUrl = logo?.url
@@ -110,7 +110,6 @@ export default function Footer({
             <h4 className="font-bold mb-4 text-white">Contact & Hours</h4>
             <div className="space-y-2 text-sm opacity-90">
               <p>Phone: {primaryPhone}</p>
-              <p>Mobile: {secondaryPhone}</p>
               <p>Email: {email}</p>
               <p className="mt-4">Hours: 7:00 AM - 7:00 PM</p>
               <p>7 Days a Week</p>
@@ -120,11 +119,11 @@ export default function Footer({
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm opacity-90">
           <p>
-            &copy; 2024 Power Plumbing. All rights reserved. | *Terms and
+            &copy; 2024 {brandName} All rights reserved. | *Terms and
             conditions apply to $0 call out fee.
           </p>
           <p className="mt-2">
-            Established 1978 | Family Owned & Operated | 100% Customer
+            Established 2021 | 100% Customer
             Satisfaction Guarantee
           </p>
         </div>

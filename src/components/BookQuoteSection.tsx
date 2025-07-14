@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Check } from "lucide-react";
 
 export default function BookQuoteSection({
   settings,
@@ -39,6 +39,29 @@ export default function BookQuoteSection({
   const { themeColorPrimary, themeTextColorOnPrimary, primaryTextColor } =
     settings;
 
+  const checklistItems = [
+    {
+      title: "CERTIFIED",
+      subtitle: "PROFESSIONALS"
+    },
+    {
+      title: "LABOUR",
+      subtitle: "GUARANTEE"
+    },
+    {
+      title: "7 DAYS A WEEK",
+      subtitle: ""
+    },
+    {
+      title: "FIXED FEE",
+      subtitle: "PRICING"
+    },
+    {
+      title: "SPECIAL OFFERS",
+      subtitle: "& DISCOUNTS"
+    }
+  ];
+
   return (
     <section className="bg-white">
       {/* Banner */}
@@ -61,7 +84,7 @@ export default function BookQuoteSection({
           className="text-xl sm:text-2xl font-bold"
           style={{ color: themeTextColorOnPrimary }}
         >
-          Get Quote Now
+          Get Quote Today
         </h2>
       </div>
 
@@ -153,6 +176,42 @@ export default function BookQuoteSection({
             </button>
           </div>
         </form>
+      </div>
+
+      {/* Checklist Section */}
+      <div className="bg-white py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {checklistItems.map((item, index) => (
+              <div key={index} className="flex flex-col items-center text-center">
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
+                  style={{ backgroundColor: themeColorPrimary }}
+                >
+                  <Check
+                    size={24}
+                    style={{ color: themeTextColorOnPrimary }}
+                    strokeWidth={3}
+                  />
+                </div>
+                <h4
+                  className="text-lg font-bold mb-1"
+                  style={{ color: primaryTextColor }}
+                >
+                  {item.title}
+                </h4>
+                {item.subtitle && (
+                  <p
+                    className="text-lg font-bold"
+                    style={{ color: primaryTextColor }}
+                  >
+                    {item.subtitle}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

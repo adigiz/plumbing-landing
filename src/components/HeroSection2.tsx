@@ -52,9 +52,10 @@ export default function HeroSection2({
 
             <div className="md:w-1/2">
               <p className="text-white mb-6 md:mb-8">
-                Elevate your brand by leveraging strategic marketing that is
-                tailored to your unique goals. Our expert team designs
-                data-driven campaigns.
+                Get fast, affordable, and professional plumbing help when you
+                need it most. From leaky taps to blocked drains, our licensed
+                plumbers deliver quality workmanship with upfront pricing and no
+                surprises
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button

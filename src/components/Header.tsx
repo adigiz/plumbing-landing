@@ -60,15 +60,7 @@ export default function Header({
                 style={{ color: "var(--primary-color)" }}
               />
               <div>
-                <div className="font-semibold text-black">{primaryPhone}</div>
-                {secondaryPhone && (
-                  <div
-                    className="text-sm"
-                    style={{ color: "var(--primary-color)" }}
-                  >
-                    {secondaryPhone}
-                  </div>
-                )}
+                <div style={{ color: "var(--primary-color)" }} className="font-semibold" >{primaryPhone}</div>
               </div>
             </div>
             <div

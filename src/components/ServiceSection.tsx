@@ -14,9 +14,15 @@ export default function ServicesSection({
     themeColorPrimary: string;
     themeTextColorOnPrimary: string;
     primaryTextColor: string;
+    brandName: string;
   };
 }) {
-  const { themeColorPrimary, themeTextColorOnPrimary, primaryTextColor } = settings;
+  const {
+    themeColorPrimary,
+    themeTextColorOnPrimary,
+    primaryTextColor,
+    brandName,
+  } = settings;
 
   const services = [
     { icon: CalendarCheck, label: "EMERGENCY 7 DAYS" },
@@ -45,10 +51,10 @@ export default function ServicesSection({
             className="text-lg leading-relaxed"
             style={{ color: primaryTextColor }}
           >
-            A single call to O’Shea Plumbing will provide you with quick, easy
-            access to experienced Melbourne Plumbers that will provide a variety
-            of services ranging from basic maintenance and repairs to emergency
-            drain cleaning and sewer repair.
+            Call {brandName} for fast and reliable plumbing services in
+            Melbourne. Our licensed plumbers handle everything from general
+            maintenance and repairs to emergency drain cleaning and sewer pipe
+            repairs.
           </p>
         </div>
 
@@ -56,7 +62,10 @@ export default function ServicesSection({
         <div className="md:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-6">
           {services.map(({ icon: Icon, label }, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-              <Icon className="h-10 w-10 mb-2" style={{ color: primaryTextColor }} />
+              <Icon
+                className="h-10 w-10 mb-2"
+                style={{ color: primaryTextColor }}
+              />
               <span
                 className="text-sm font-medium leading-tight"
                 style={{ color: primaryTextColor }}
@@ -86,7 +95,11 @@ export default function ServicesSection({
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </a>
       </div>

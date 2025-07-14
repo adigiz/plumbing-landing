@@ -15,13 +15,12 @@ export default function WhyUsSection({
 
   return (
     <section className="relative py-20 bg-white overflow-hidden">
-      {/* Background Image */}
       <div className="absolute left-0 top-0 bottom-0 w-full hidden md:block z-0">
         <Image
           src="/melbourne.jpg"
           alt="Melbourne Background"
           fill
-          className="object-cover opacity-10"
+          className="object-cover opacity-3"
         />
       </div>
 
@@ -29,7 +28,7 @@ export default function WhyUsSection({
         {/* Left Content */}
         <div className="space-y-6">
           <h2
-            className="text-3xl font-bold leading-tight"
+            className="text-3xl font-bold leading-tight uppercase"
             style={{ color: primaryTextColor }}
           >
             Why choose <br /> Us as your <br /> Melbourne Plumber?

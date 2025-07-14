@@ -5,7 +5,6 @@ export default function EmergencyPlumberSection({
 }: {
   settings: {
     primaryPhone: string;
-    secondaryPhone: string;
     themeColorPrimary: string;
     themeTextColorOnPrimary: string;
     primaryTextColor: string;
@@ -13,7 +12,6 @@ export default function EmergencyPlumberSection({
 }) {
   const {
     primaryPhone,
-    secondaryPhone,
     themeColorPrimary,
     themeTextColorOnPrimary,
     primaryTextColor,
@@ -39,10 +37,10 @@ export default function EmergencyPlumberSection({
                 className="uppercase font-bold tracking-wide mb-2"
                 style={{ color: primaryTextColor }}
               >
-                Rapid Response
+                Urgent Response
               </h3>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                We’ll come running.
+              <h2 className="text-4xl md:text-4xl font-bold">
+                Ready when you need us most.
               </h2>
             </div>
           </div>
@@ -65,21 +63,15 @@ export default function EmergencyPlumberSection({
             week.
           </h3>
           <p className="text-gray-700 text-base mb-4 leading-relaxed">
-            Do you need a local Melbourne emergency plumber to be at your
-            property quickly? Our team can be there promptly to assist with your
-            plumbing emergency. Whether it’s a broken pipe or a gas leak our
-            team of Melbourne-based plumbers has the expertise and training to
-            safely restore your property’s plumbing to working order. We are the
-            emergency plumbers that Melbourne’s homes and businesses can depend
-            on to quickly identify and solve their plumbing problems.
-          </p>
-          <p className="text-gray-700 text-base leading-relaxed">
-            O’Shea has a team of plumbers Melbourne locals can rely on, whatever
-            your needs. Our team is prepared for all plumbing issues that you
-            might come across –{" "}
-            <span className="font-bold" style={{ color: primaryTextColor }}>
-              The plumber Melbourne locals can call on 7 days a week.
-            </span>
+            Looking for a fast and reliable emergency plumber in Melbourne? Our
+            licensed local plumbers are available every day of the week to
+            respond quickly to urgent plumbing issues. Whether you&apos;re
+            dealing with a burst pipe, blocked drain, or gas leak, we have the
+            tools and experience to fix the problem safely and efficiently.
+            Homeowners and businesses across Melbourne trust our team to deliver
+            prompt, professional service when it matters most. We handle all
+            types of emergency plumbing repairs with expert care and clear
+            communication.
           </p>
         </div>
 
@@ -99,18 +91,6 @@ export default function EmergencyPlumberSection({
           >
             {primaryPhone}
           </div>
-          <div className="font-bold mb-4" style={{ color: primaryTextColor }}>
-            OR
-          </div>
-          <div
-            className="font-bold text-lg py-2 rounded"
-            style={{
-              backgroundColor: themeColorPrimary,
-              color: themeTextColorOnPrimary,
-            }}
-          >
-            {secondaryPhone}
-          </div>
         </div>
       </div>
 
@@ -119,11 +99,8 @@ export default function EmergencyPlumberSection({
           className="text-xl md:text-2xl font-bold "
           style={{ color: primaryTextColor }}
         >
-          <span style={{ color: primaryTextColor }}>Contact</span>{" "}
-          <span className="font-black" style={{ color: primaryTextColor }}>
-            O’Shea Plumbing
-          </span>{" "}
-          today to get a fixed quote for your plumbing needs.
+          Get in touch now for fast response times and a fixed-price quote on
+          your plumbing emergency.
         </h4>
       </div>
     </section>
