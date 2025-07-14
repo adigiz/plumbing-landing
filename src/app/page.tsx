@@ -8,11 +8,24 @@ import ReviewSection from "@/components/ReviewSection";
 import EmergencyPlumberSection from "@/components/EmergencyPlumberSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings();
+  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+  const faviconUrl = settings.favicon?.data?.attributes?.url;
+
+  return {
+    title: settings.metaTitle || "Turbo Plumbing",
+    description: settings.metaDescription || "Reliable Melbourne plumbing services.",
+    icons: faviconUrl ? [{ rel: "icon", url: `${baseUrl}${faviconUrl}` }] : undefined,
+  };
+}
 
 export default async function HomePage() {
   const settings = await getSiteSettings();
   const baseUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL;
-  console.log(settings, "set")
+
   const [reviewsRes, googleRes] = await Promise.all([
     fetch(`${baseUrl}/api/reviews?populate=photo`, { cache: "no-store" }),
     fetch(`${baseUrl}/api/google-review`, { cache: "no-store" }),
@@ -20,7 +33,6 @@ export default async function HomePage() {
 
   const reviewsData = await reviewsRes.json();
   const googleData = await googleRes.json();
-  console.log(reviewsData, "set", googleData)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const reviews = reviewsData.data.map((r: any) => ({
     name: r.name,
